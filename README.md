@@ -46,46 +46,64 @@ Com base nas informações obtidas, foi realizado o desenvolvimento do
 Do Modelo conceitual e o Modelo de Entidade e Relacionamento (MER).
 
 Pelo que coletamos do cliente, no nosso banco de dados, teremos
-4 entidades
-• Vendas
-• Vendedores
-• Dependentes
-• Produto
-
-Tabela Vendas (tbven)
-• cdven (pk)
-• dtven
-• cdcli
-• nmcli
-• agecli
-• clacli
-• sxcli
-• cidcli
-• estcli
-• paiscli
-• qtven
-• vruven
-• vrtven
-• canal
-• stven
-• deleted
-• cdvdd* (fk)
-• cdpro* (fk)
-
-Tabela Vendedores (tbvdd)
-• cdvdd (pk)
-• nmvdd
-• sxvdd
-• perccomissao
-• matfunc
+5 entidades
+| Tabela       | Descrição no BD |
+|--------------|-----------------|
+| Produto      | tbpro           |
+| Itens de Venda      | tbven_item           |
+| Vendedores   | tbvdd           |
+| Dependentes  | tbpro           |
+| Vendas       | tbven           |
 
 Tabela Produto (tbpro)
-• cdpro (pk)
-• nmpro
-• tppro
-• undpro
-• slpro
-• stpro
+| Coluna        | Tipo          |
+|---------------|---------------|
+| cdpro (pk)    |     integer PRIMARY KEY          |
+| nmpro         |      varchar(100)         |
+| tppro         |      varchar(100)         |
+| undpro        |      integer         |
+| slpro         |      integer         |
+| stpro         |      integer         |
+
+Tabela Item de venda (tbven_item)
+| Coluna        | Tipo          |
+|---------------|---------------|
+| cdvenitem (pk)    |     integer PRIMARY KEY          |
+| qtven         |      numeric        |
+| vluven         |      numeric         |
+| vltven        |      numeric         |
+| tppro         |      varchar(100)         |
+| cdpro         |      integer         |
+
+Tabela Vendas (tbven)
+
+| Coluna        | Tipo          |
+|---------------|---------------|
+| cdven (pk)    |   primary key            |
+| dtven         |     date          |
+| cdcli         |     int          |
+| nmcli         |     varchar(100)          |
+| agecli        |       numeric        |
+| clacli        |      varchar(50)         |
+| sxcli         |     varchar(10)          |
+| cidcli        |     varchar(50)          |
+| estcli        |     varchar(50)          |
+| paiscli       |     varchar(50)          |
+| canal         |     varchar(50)          |
+| stven         |     varchar(20)          |
+| deleted       |     varchar(3)          |
+| cdvdd* (fk)   |     int          |
+| cdpro* (fk)   |     int          |
+
+Tabela Vendedores (tbvdd)
+| Coluna        | Tipo          |
+|---------------|---------------|
+| cdvdd (pk)    |     int primary key          |
+| nmvdd         |     varchar(100)          |
+| sxvdd         |      varchar(10)         |
+| perccomissao  |       numeric        |
+| matfunc       |       int        |
+
 
 ## 3. Criando o Banco de Dados
 
@@ -146,6 +164,7 @@ CREATE TABLE IF NOT EXISTS tbven (
 	dtven date,
 	cdcli int, 
 	nmcli varchar(100),
+	agecli numeric,
 	clacli varchar(50),
 	sxcli varchar(10),
 	cidcli varchar(50),
@@ -187,17 +206,17 @@ Dessa forma, para testar o banco e tabelas criadas, vamos popular algumas tabela
 ## 4.1 Inserindo dados na tabela VENDEDOR função INSERT (DML)
 
 ```sql
-INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0001, 'LUIZ SILVA', 'masculino', 0.05, 0001);
-INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0002, 'LAIS GABRIELLE', 'feminino', 0.05, 0002);
-INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0003, 'BRUNA POLICARPO', 'feminino', 0.05, 0003);
-INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0004, 'BHRENDA BASTOS', 'feminino', 0.05, 0004);
-INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0005, 'SERGIO BRAGA', 'masculino', 0.05, 0005);
+INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0001, 'LUIZ', 'masculino', 0.05, 0001);
+INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0002, 'LAIS', 'feminino', 0.05, 0002);
+INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0003, 'BRUNA', 'feminino', 0.05, 0003);
+INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0004, 'BHRENDA', 'feminino', 0.05, 0004);
+INSERT INTO tbvdd (cdvdd, nmvdd, sxvdd, perccomissao, matfunc) VALUES (0005, 'SERGIO', 'masculino', 0.05, 0005);
 ```
 
 ## 4.2 Inserindo dados na tabela DEPENDENTES DE VENDEDOR função INSERT (DML)
 
 ```sql
-INSERT INTO tbdep (cddep,nmdep,dtnasc,sxdep,inepescola,cdvdd) VALUES (0001,'MARJORIE POLICARPO',TIMESTAMP '2020-11-25','feminino',23268093,0003);
+INSERT INTO tbdep (cddep,nmdep,dtnasc,sxdep,inepescola,cdvdd) VALUES (0001,'MARJORIE',TIMESTAMP '2020-11-25','feminino',23268093,0003);
 ```
 
 ## 4.3 Inserindo dados na tabela PRODUTO - função INSERT (DML)
@@ -259,7 +278,10 @@ SELECT * FROM tbven;
 
 Bom, após todo o desenvolvimento apresentado acima, concluímos o desenvolvimento do banco de dados e estrutura de tabelas de acordo com as necessidades e exigências do cliente. 
 
+
 Para mais informações ou detalhes, entre em contato atráves do [e-mail](engluizpolicarpo)
+
+
 
 **Luiz Policarpo**
 
