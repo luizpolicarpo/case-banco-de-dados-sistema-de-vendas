@@ -1,3 +1,4 @@
+
 # Case Banco de Dados Sistema de Vendas
 
 No projeto a seguir vamos conferir como criar um banco de dados no SGBD PostgreSQL para um sistema de vendas de uma loja.
