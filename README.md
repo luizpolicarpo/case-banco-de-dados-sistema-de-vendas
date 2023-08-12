@@ -42,8 +42,11 @@ base nas compras que já fizeram, se puderem adicionar...
 
 ## 2. Desenvolvimento do Modelo de Entidade e Relacionamento (MER)
 
-Com base nas informações obtidas, foi realizado o desenvolvimento do 
-Do Modelo conceitual e o Modelo de Entidade e Relacionamento (MER).
+Com base nas informações obtidas, foi realizado o desenvolvimento do Modelo conceitual e o Modelo de Entidade e Relacionamento (MER).
+
+Inicialmente desenvolvemos o [Modelo Conceitual](https://github.com/luizpolicarpo/case-banco-de-dados-sistema-de-vendas/blob/main/Modelagem%20Conceitual%20Sistema%20Vendas.pdf)
+
+Logo em seguida desenvolvemos o [Modelo Lógico](https://github.com/luizpolicarpo/case-banco-de-dados-sistema-de-vendas/blob/main/Modelagem%20L%C3%B3gica%20Sistema%20Vendas.pdf)
 
 Pelo que coletamos do cliente, no nosso banco de dados, teremos
 5 entidades
@@ -105,7 +108,7 @@ Tabela Vendedores (tbvdd)
 | matfunc       |       int        |
 
 
-## 3. Criando o Banco de Dados
+## 3. Desenvolvendo o Modelo Físico e Criando o Banco de Dados
 
 Após as informações obtidas e desenvolvimento dos Modelos Conceitual e Lógico da Entidade e Relacionamento (MER), iniciamos o desenvolvimento do Banco de Dados.
 
