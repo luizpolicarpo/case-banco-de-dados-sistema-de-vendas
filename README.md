@@ -286,7 +286,7 @@ SELECT * FROM tbven;
 Bom, este estudo de caso apresentou o processo de desenvolvimento de um banco de dados para um sistema de vendas, desde a coleta de requisitos até a criação do banco de dados e a inserção e consulta de dados. A implementação detalhada das tabelas, colunas, chaves primárias e estrangeiras proporciona um panorama completo do sistema e como as informações estão organizadas e relacionadas entre si.
 
 
-Para mais informações ou detalhes, entre em contato através do [e-mail](engluizpolicarpo)
+Para mais informações ou detalhes, entre em contato através do [e-mail](mailto:engluizpolicarpo@gmail.com)
 
 
 **Luiz Policarpo** (*Consultor em Comércio Exterior com experiência de mais de 13 anos no mercado, engenheiro de produção pós graduado em Supply Chain, Logística e Transportes, especializado em regimes aduaneiros especiais de importação e exportação. Apaixonado por Tecnologia, BigData e Ciência de Dados. Ajudo empresas a melhorarem os seus processos no Comex através de soluções tecnológicas*) -  [LinkedIn](https://www.linkedin.com/in/luizpolicarpo/) | [Instagram](https://instagram.com/luizpolicarpo) | [Blog e Artigos](https://einship.com/blog-list)
